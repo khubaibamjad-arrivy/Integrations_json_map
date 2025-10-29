@@ -1,0 +1,69 @@
+{
+  "integration_version": "1.0",
+  "integration_name": "ONEDRIVE",
+  "reverse_mapping_for_task_update": [
+    {
+      "arrivy_key_source": "template_extra_fields",
+      "arrivy_key_name": "One Drive Folder URL",
+      "type": "TEXT",
+      "external_key_name": "task_folder_urls",
+      "index": 1
+    }
+  ],
+  "actions_to_perform": [
+    {
+      "arrivy_key_source": "TASK",
+      "external_key_source": "DRIVE",
+      "default_arrivy_folder": true,
+      "upload_with_pages": true,
+      "first_page_name": "Screen 1",
+      "parent_folder_source": {
+        "source": "template_extra_fields",
+        "arrivy_key_name": "One Drive Folder URL"
+      },
+      "folder_mapping": {
+        "folders": [
+          {
+            "fields": [
+              {
+                "arrivy_key_source": "template_extra_fields",
+                "arrivy_key_name": "Customer Unique ID",
+                "substitution_str": "<value>"
+              },
+              {
+                "arrivy_key_source": "TASK",
+                "arrivy_key_name": "customer_first_name",
+                "substitution_str": " <value>"
+              },
+              {
+                "arrivy_key_source": "TASK",
+                "arrivy_key_name": "customer_last_name",
+                "substitution_str": " <value>"
+              }
+            ]
+          },
+          {
+            "fields": [
+              {
+                "arrivy_key_source": "TASK_FORM",
+                "arrivy_key_name": "title",
+                "substitution_str": "<value> <page_name>"
+              }
+            ]
+          }
+        ]
+      },
+      "action_meta": {
+        "attachment_types_to_send": [
+          "FORM_PDF"
+        ],
+        "keys_to_fetch": [
+          {
+            "source": "template_extra_fields",
+            "arrivy_key_name": "One Drive Folder URL"
+          }
+        ]
+      }
+    }
+  ]
+}
