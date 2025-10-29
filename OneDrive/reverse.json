@@ -26,30 +26,32 @@
           {
             "fields": [
               {
-                "arrivy_key_source": "template_extra_fields",
-                "arrivy_key_name": "Customer Unique ID",
-                "substitution_str": "<value>"
-              },
-              {
                 "arrivy_key_source": "TASK",
-                "arrivy_key_name": "customer_first_name",
-                "substitution_str": " <value>"
-              },
-              {
-                "arrivy_key_source": "TASK",
-                "arrivy_key_name": "customer_last_name",
-                "substitution_str": " <value>"
+                "arrivy_key_name": "title",
+                "substitution_str": "<value> - <timestamp>"
               }
             ]
+          }
+        ]
+      },
+      "file_mapping": {
+        "fields": [
+          {
+            "arrivy_key_source": "TASK",
+            "arrivy_key_name": "start_datetime",
+            "arrivy_date_format": "MM-DD-YYYY-HH:mm:ss",
+            "arrivy_key_type": "DATE",
+            "substitution_str": "<value>-"
           },
           {
-            "fields": [
-              {
-                "arrivy_key_source": "TASK_FORM",
-                "arrivy_key_name": "title",
-                "substitution_str": "<value> <page_name>"
-              }
-            ]
+            "arrivy_key_source": "TASK",
+            "arrivy_key_name": "timestamp",
+            "substitution_str": "<value>-"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "arrivy_key_name": "title",
+            "substitution_str": "<value> Form 1"
           }
         ]
       },
