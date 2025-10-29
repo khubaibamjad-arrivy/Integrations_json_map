@@ -1,0 +1,76 @@
+{
+  "integration_version": "1.0",
+  "integration_name": "GOOGLEDRIVE",
+  "root_folderxxx": "Root folder",
+  "reverse_mapping_for_task_update": [
+    {
+      "arrivy_key_source": "template_extra_fields",
+      "arrivy_key_name": "Created Drive Folder URL",
+      "type": "TEXT",
+      "external_key_name": "folder_url"
+    },
+    {
+      "arrivy_key_source": "extra_fields",
+      "arrivy_key_name": "xyzebc",
+      "type": "TEXT",
+      "external_key_name": "folder_url"
+    },
+    {
+      "arrivy_key_source": "task",
+      "arrivy_key_name": "details",
+      "type": "TEXT",
+      "external_key_name": "folder_url"
+    }
+  ],
+  "actions_to_perform": [
+    {
+      "arrivy_key_source": "TASK",
+      "external_key_source": "DRIVE",
+      "default_arrivy_folder": true,
+      "folder_mapping": {
+        "folders": [
+          {
+            "fields": [
+              {
+                "arrivy_key_name": "title",
+                "arrivy_key_source": "TASK",
+                "substitution_str": "<value>"
+              },
+              {
+                "arrivy_key_name": "start_datetime",
+                "arrivy_key_source": "TASK",
+                "arrivy_date_format": "YYYY-MM-DD",
+                "arrivy_key_type": "DATE",
+                "substitution_str": " - <value>"
+              }
+            ]
+          },
+          {
+            "fields": [
+              {
+                "arrivy_key_name": "title",
+                "arrivy_key_source": "TASK",
+                "substitution_str": "<value>"
+              },
+              {
+                "arrivy_key_name": "created",
+                "arrivy_key_source": "TASK",
+                "arrivy_date_format": "YYYY-MM-DD",
+                "arrivy_key_type": "DATE",
+                "substitution_str": " - <value>"
+              }
+            ]
+          }
+        ]
+      },
+      "action_meta": {
+        "keys_to_fetch": [
+          {
+            "source": "template_extra_fields",
+            "arrivy_key_name": "Drive Folder URL"
+          }
+        ]
+      }
+    }
+  ]
+}
