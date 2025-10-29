@@ -1,0 +1,38 @@
+{
+  "integration_version": "2.0",
+  "integration_name": "GOOGLECALENDAR",
+  "actions_to_perform": [
+    {
+      "action_to_perform": "create",
+      "arrivy_key_source": "TASK",
+      "external_key_source": "EVENT",
+      "action_meta": {
+        "keys_to_update": [
+          {
+            "external_key_name": "summary",
+            "arrivy_key_name": "title"
+          },
+          {
+            "external_key_name": "location",
+            "arrivy_key_name": "customer_address_line_1"
+          },
+          {
+            "external_key_name": "attendees",
+            "arrivy_key_name": "template_extra_fields$Assignee"
+          }
+        ]
+      },
+      "rules": [
+        {
+          "task_field": [
+            "customer_name",
+            "template_extra_fields$details",
+            "attendees_for_calendar"
+          ],
+          "key": "concatenate",
+          "external_key_name": "description"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "integration_name": "GOOGLECALENDAR",
+  "integration_version": "2.0",
+  "fetch_assignees": true,
+  "mappings": {
+    "event": [
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "title",
+        "integration_field_name": "summary",
+        "integration_field_path": "event"
+      },
+      {
+        "integration_field_type": "date",
+        "arrivy_field_name": "start_datetime",
+        "integration_field_name": "dateTime",
+        "integration_field_path": "event$start"
+      },
+      {
+        "integration_field_type": "timezone",
+        "arrivy_field_name": "start_datetime_timezone",
+        "integration_field_name": "timeZone",
+        "integration_field_path": "event$start"
+      },
+      {
+        "integration_field_type": "date",
+        "arrivy_field_name": "end_datetime",
+        "integration_field_name": "dateTime",
+        "integration_field_path": "event$end"
+      },
+      {
+        "integration_field_type": "timezone",
+        "arrivy_field_name": "end_datetime_timezone",
+        "integration_field_name": "timeZone",
+        "integration_field_path": "event$end"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_address_line_1",
+        "integration_field_name": "location",
+        "integration_field_path": "event"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_address_line_2",
+        "integration_field_name": "location",
+        "integration_field_path": "event"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "details",
+        "integration_field_name": "description",
+        "integration_field_path": "event"
+      },
+      {
+        "arrivy_field_name": "template_extra_fields",
+        "integration_field_info": [
+          {
+            "field_name": "emails",
+            "field_path": "event",
+            "extra_field_name": "Attendees",
+            "field_type": "string"
+          },
+          {
+            "field_name": "summary",
+            "field_path": "event",
+            "extra_field_name": "Name",
+            "field_type": "string"
+          },
+          {
+            "field_name": "summary",
+            "field_path": "event",
+            "extra_field_name": "Drop",
+            "field_type": "dropdown",
+            "dropdown_labels_and_values": {
+              "val 1": "1",
+              "val 2": "2",
+              "val 3": "3"
+            },
+            "use_dropdown_labels_and_values_as": "USE_AS_LABELS",
+            "dropdown_labels_and_values_order": {
+              "val 1": 1,
+              "val 2": 2,
+              "val 3": 3
+            }
+          }
+        ]
+      },
+      {
+        "integration_field_info": [
+          {
+            "field_path": "event",
+            "additional_address_field_name": "address_line_1",
+            "field_name": "iCalUID"
+          }
+        ],
+        "arrivy_field_name": "additional_address",
+        "arrivy_address_label": "Test Address GC"
+      }
+    ]
+  }
+}
