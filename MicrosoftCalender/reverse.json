@@ -1,0 +1,32 @@
+{
+  "integration_version": "1.0",
+  "integration_name": "MICROSOFT_365_CALENDAR",
+  "actions_to_perform": [
+    {
+      "action_to_perform": "create",
+      "arrivy_key_source": "TASK",
+      "external_key_source": "EVENT",
+      "action_meta": {
+        "keys_to_update": [
+          {
+            "external_key_name": "subject",
+            "arrivy_key_name": "title"
+          },
+          {
+            "external_key_name": "location",
+            "arrivy_key_name": "customer_address"
+          },
+          {
+            "external_key_name": "attendees",
+            "arrivy_key_name": "extra_fields$Assignees"
+          },
+          {
+            "external_key_name": "description",
+            "arrivy_key_name": "details"
+          }
+        ]
+      },
+      "get_attendees_from": "TASK"
+    }
+  ]
+}

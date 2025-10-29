@@ -1,0 +1,97 @@
+{
+  "integration_version": "1.0",
+  "integration_name": "MICROSOFT_365_CALENDAR",
+  "mappings": {
+    "event": [
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "title",
+        "integration_field_name": "subject",
+        "integration_field_path": "event"
+      },
+      {
+        "integration_field_type": "date",
+        "arrivy_field_name": "start_datetime",
+        "integration_field_name": "dateTime",
+        "integration_field_path": "event$start"
+      },
+      {
+        "integration_field_type": "timezone",
+        "arrivy_field_name": "start_datetime_timezone",
+        "integration_field_name": "timeZone",
+        "integration_field_path": "event$start"
+      },
+      {
+        "integration_field_type": "date",
+        "arrivy_field_name": "end_datetime",
+        "integration_field_name": "dateTime",
+        "integration_field_path": "event$end"
+      },
+      {
+        "integration_field_type": "timezone",
+        "arrivy_field_name": "end_datetime_timezone",
+        "integration_field_name": "timeZone",
+        "integration_field_path": "event$end"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_address_line_1",
+        "integration_field_name": "displayName",
+        "integration_field_path": "event$location"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_address_line_2",
+        "integration_field_name": "street",
+        "integration_field_path": "event$location$address"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_city",
+        "integration_field_name": "city",
+        "integration_field_path": "event$location$address"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_state",
+        "integration_field_name": "state",
+        "integration_field_path": "event$location$address"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_country",
+        "integration_field_name": "countryOrRegion",
+        "integration_field_path": "event$location$address"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_zipcode",
+        "integration_field_name": "postalCode",
+        "integration_field_path": "event$location$address"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "details",
+        "integration_field_name": "description",
+        "integration_field_path": "event"
+      },
+      {
+        "integration_field_info": [
+          {
+            "field_name": "attendees",
+            "field_type": "string",
+            "field_path": "event",
+            "extra_field_name": "Attendees"
+          },
+          {
+            "field_name": "onlineMeetingUrl",
+            "field_type": "string",
+            "field_path": "event",
+            "extra_field_name": "Skype Link"
+          }
+        ],
+        "arrivy_field_name": "extra_fields"
+      }
+    ]
+  }
+}
