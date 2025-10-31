@@ -1,11 +1,11 @@
 {
-  "integration_version": "1.0",
-  "integration_name": "hubspot",
+  "integration_version": "3.0",
+  "integration_name": "HUBSPOT",
   "actions_to_perform": [
     {
+      "external_key_source": "TICKET",
       "action_to_perform": "update",
       "arrivy_key_source": "TASK",
-      "external_key_source": "TICKET",
       "action_meta": {
         "keys_to_update": [
           {
@@ -13,20 +13,83 @@
             "arrivy_key_name": "title"
           },
           {
-            "external_key_name": "content",
-            "arrivy_key_name": "details"
+            "external_key_name": "booking_end_date_time",
+            "rules": [
+              {
+                "type": "value_by_conditions",
+                "conditions": [
+                  {
+                    "condition_field": {
+                      "source": "TASK",
+                      "field_name": "template_extra_fields.signature_filled"
+                    },
+                    "condition_operator": "is_not_empty"
+                  },
+                  {
+                    "condition_field": {
+                      "source": "TASK",
+                      "field_name": "customer_first_name"
+                    },
+                    "condition_operator": "is_not_empty"
+                  },
+                  {
+                    "condition_field": {
+                      "source": "TASK",
+                      "field_name": "template_extra_fields.tag"
+                    },
+                    "condition_operator": "strict_equals",
+                    "condition_value": "67"
+                  },
+                  {
+                    "condition_field": {
+                      "source": "TASK",
+                      "field_name": "template_extra_fields.cup"
+                    },
+                    "condition_operator": "exists"
+                  }
+                ],
+                "rule_value": {
+                  "source": "TASK",
+                  "field_name": "updated"
+                }
+              }
+            ],
+            "conversion": "utc_to_timestamp_milliseconds"
           },
           {
-            "external_key_name": "hs_ticket_category",
-            "arrivy_key_name": "template_extra_fields$category"
-          },
-          {
-            "external_key_name": "hs_ticket_priority",
-            "arrivy_key_name": "template_extra_fields$priority"
-          },
-          {
-            "external_key_name": "hs_pipeline_stage",
-            "arrivy_key_name": "template_extra_fields$ticket_stage"
+            "external_key_name": "booking_start_date_time",
+            "rules": [
+              {
+                "type": "value_by_conditions",
+                "conditions": [
+                  {
+                    "condition_field": {
+                      "source": "TASK",
+                      "field_name": "template_extra_fields.percentage"
+                    },
+                    "condition_operator": "in",
+                    "condition_value": [
+                      "50",
+                      "60",
+                      "70"
+                    ]
+                  },
+                  {
+                    "condition_field": {
+                      "source": "TASK",
+                      "field_name": "template_extra_fields.check_box_field"
+                    },
+                    "condition_operator": "strict_equals",
+                    "condition_value": "true"
+                  }
+                ],
+                "rule_value": {
+                  "source": "TASK",
+                  "field_name": "start_datetime"
+                }
+              }
+            ],
+            "conversion": "utc_to_timestamp_milliseconds"
           }
         ]
       }
