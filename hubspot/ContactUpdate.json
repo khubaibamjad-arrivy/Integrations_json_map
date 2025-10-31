@@ -7,7 +7,7 @@
       "arrivy_key_source": "TASK",
       "external_key_source": "CONTACT",
       "action_meta": {
-        "keys_to_update": [
+        "keys_to_create": [
           {
             "external_key_name": "firstname",
             "arrivy_key_name": "customer_first_name"

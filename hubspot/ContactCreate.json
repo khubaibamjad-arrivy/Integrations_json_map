@@ -3,7 +3,7 @@
   "integration_name": "hubspot",
   "actions_to_perform": [
     {
-      "action_to_perform": "create",
+      "action_to_perform": "update",
       "arrivy_key_source": "TASK",
       "external_key_source": "CONTACT",
       "action_meta": {
