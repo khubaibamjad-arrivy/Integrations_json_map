@@ -1,0 +1,390 @@
+{
+  "integration_version": "2.0",
+  "integration_name": "HUBSPOT",
+  "stages_to_statuses_mappings_v2": [
+    {
+      "action_to_perform": "MARK_STATUS_ON_TASK",
+      "from_customer": "false",
+      "value": "MILESTONE",
+      "external_info": {
+        "propertyName": "dealstage",
+        "value": "closedwon"
+      }
+    }
+  ],
+  "rules": {
+    "deal": [
+      {
+        "entity_by_owner": true,
+        "arrivy_field_name": "Assignees",
+        "task_field": "Assignees",
+        "key": "create_entities"
+      }
+    ],
+    "ticket": [
+      {
+        "entity_by_owner": true,
+        "arrivy_field_name": "Assignees",
+        "task_field": "Assignees",
+        "key": "create_entities"
+      }
+    ]
+  },
+  "utils": {
+    "deal": [
+      {
+        "fetch_owner": true
+      }
+    ],
+    "ticket": [
+      {
+        "fetch_owner": true
+      }
+    ]
+  },
+  "notes_meta": {
+    "get_attachments": true,
+    "fetch_notes": "0-24"
+  },
+  "mappings": {
+    "contact": [
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_last_name",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$lastname"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "title",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$jobtitle"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_first_name",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$firstname"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_address_line_1",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$address_line_1"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_address_line_2",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$address_line_2"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_city",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$customer_city"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_state",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$customer_state"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_zipcode",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$zipcode"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_country",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$customer_country"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_email",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$email"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_mobile_number",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$mobilephone"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_phone",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$phone"
+      },
+      {
+        "integration_field_info": [
+          {
+            "field_name": "value",
+            "field_path": "deal$properties$dealtype",
+            "extra_field_name": "Deal Type"
+          }
+        ],
+        "arrivy_field_name": "extra_fields"
+      },
+      {
+        "integration_field_info": [
+          {
+            "field_type": "TEXT",
+            "field_path": "contacts$hubspot_contact_id$properties$website",
+            "field_name": "value",
+            "extra_field_name": "Website"
+          },
+          {
+            "field_type": "TEXT",
+            "field_path": "contacts$hubspot_contact_id$properties$lifecyclestage",
+            "field_name": "value",
+            "extra_field_name": "Lifecycle Stage"
+          },
+          {
+            "field_type": "DATE",
+            "field_path": "contacts$hubspot_contact_id$properties$createdate",
+            "field_name": "value",
+            "extra_field_name": "Created Date"
+          },
+          {
+            "field_type": "TEXT",
+            "field_path": "contacts$hubspot_contact_id$properties$lead_status",
+            "field_name": "value",
+            "extra_field_name": "Lead Status"
+          }
+        ],
+        "arrivy_field_name": "template_extra_fields"
+      }
+    ],
+    "ticket": [
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "title",
+        "integration_field_name": "value",
+        "integration_field_path": "ticket$properties$subject"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_first_name",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$properties$firstname"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_last_name",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$properties$lastname"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_email",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$properties$email"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_mobile_number",
+        "integration_field_name": "value",
+        "integration_field_path": "ticket$properties$p_number"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "start_datetime",
+        "integration_field_name": "value",
+        "integration_field_path": "ticket$properties$createdate"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_stage",
+        "integration_field_name": "value",
+        "integration_field_path": "ticket$properties$hs_pipeline_stage"
+      },
+      {
+        "integration_field_info": [
+          {
+            "field_type": "TEXT",
+            "field_path": "ticket$properties$content",
+            "field_name": "value",
+            "extra_field_name": "Names"
+          },
+          {
+            "field_type": "NUMBER",
+            "field_path": "ticket$properties$p_number",
+            "field_name": "value",
+            "extra_field_name": "Cnic"
+          },
+          {
+            "field_type": "TEXT",
+            "field_path": "ticket$properties$hobbies",
+            "field_name": "value",
+            "extra_field_name": "Hobby"
+          },
+          {
+            "field_type": "TEXT",
+            "field_path": "ticket$properties$content",
+            "field_name": "value",
+            "extra_field_name": "Movie"
+          },
+          {
+            "field_type": "DATE",
+            "field_path": "ticket$properties$createdate",
+            "field_name": "value",
+            "extra_field_name": "Issue date"
+          }
+        ],
+        "arrivy_field_name": "template_extra_fields"
+      },
+      {
+        "integration_field_info": [
+          {
+            "field_type": "TEXT",
+            "field_path": "ticket$properties$p_number",
+            "field_name": "value",
+            "extra_field_name": "Assignees"
+          },
+          {
+            "external_field_type": "owner",
+            "field_type": "owner",
+            "field_path": "ticket$properties$hubspot_owner_id",
+            "field_name": "value",
+            "extra_field_name": "Assignees"
+          },
+          {
+            "field_name": "value",
+            "field_path": "ticket$properties$content",
+            "extra_field_name": "content ticket"
+          }
+        ],
+        "arrivy_field_name": "extra_fields"
+      }
+    ],
+    "deal": [
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "title",
+        "integration_field_name": "value",
+        "integration_field_path": "deal$properties$dealname"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "start_datetime",
+        "integration_field_name": "value",
+        "integration_field_path": "deal$properties$priority"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "end_datetime",
+        "integration_field_name": "value",
+        "integration_field_path": "deal$properties$redo_reason"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "details",
+        "integration_field_name": "value",
+        "integration_field_path": "deal$properties$job_instructions"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_company_name",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$associated-company$properties$name"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_first_name",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$firstname"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_last_name",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$lastname"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_email",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$email"
+      },
+      {
+        "integration_field_type": "string",
+        "arrivy_field_name": "customer_mobile_number",
+        "integration_field_name": "value",
+        "integration_field_path": "contacts$hubspot_contact_id$properties$mobilephone"
+      },
+      {
+        "integration_field_info": [
+          {
+            "field_name": "value",
+            "field_path": "deal$properties$amount",
+            "extra_field_name": "Amount"
+          },
+          {
+            "field_name": "value",
+            "field_path": "deal$properties$dealstage",
+            "extra_field_name": "Deal Stage"
+          },
+          {
+            "field_name": "value",
+            "field_type": "DATE",
+            "field_path": "deal$properties$due_date",
+            "extra_field_name": "Due Date"
+          },
+          {
+            "field_name": "value",
+            "field_path": "deal$properties$priority",
+            "extra_field_name": "Priority"
+          },
+          {
+            "external_field_type": "owner",
+            "field_type": "owner",
+            "field_path": "deal$properties$hubspot_owner_id",
+            "field_name": "value",
+            "extra_field_name": "Owner Name"
+          }
+        ],
+        "arrivy_field_name": "extra_fields"
+      },
+      {
+        "integration_field_info": [
+          {
+            "field_name": "value",
+            "field_path": "deal$properties$dealstage",
+            "extra_field_name": "Deal Stage"
+          },
+          {
+            "field_name": "value",
+            "field_path": "deal$properties$property_1",
+            "extra_field_name": "Property 1"
+          },
+          {
+            "field_name": "value",
+            "field_path": "deal$properties$property_2",
+            "extra_field_name": "Property 2"
+          },
+          {
+            "field_name": "value",
+            "field_path": "deal$properties$property_3",
+            "extra_field_name": "Property 3"
+          },
+          {
+            "field_name": "value",
+            "field_path": "deal$properties$property_4",
+            "extra_field_name": "Property 4"
+          },
+          {
+            "field_name": "value",
+            "field_path": "deal$properties$property_5",
+            "extra_field_name": "Property 5"
+          }
+        ],
+        "arrivy_field_name": "template_extra_fields"
+      }
+    ]
+  }
+}
