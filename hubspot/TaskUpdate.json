@@ -1,0 +1,35 @@
+{
+  "integration_version": "1.0",
+  "integration_name": "hubspot",
+  "actions_to_perform": [
+    {
+      "action_to_perform": "update",
+      "arrivy_key_source": "TASK",
+      "external_key_source": "TICKET",
+      "action_meta": {
+        "keys_to_update": [
+          {
+            "external_key_name": "subject",
+            "arrivy_key_name": "title"
+          },
+          {
+            "external_key_name": "content",
+            "arrivy_key_name": "details"
+          },
+          {
+            "external_key_name": "hs_ticket_category",
+            "arrivy_key_name": "template_extra_fields$category"
+          },
+          {
+            "external_key_name": "hs_ticket_priority",
+            "arrivy_key_name": "template_extra_fields$priority"
+          },
+          {
+            "external_key_name": "hs_pipeline_stage",
+            "arrivy_key_name": "template_extra_fields$ticket_stage"
+          }
+        ]
+      }
+    }
+  ]
+}

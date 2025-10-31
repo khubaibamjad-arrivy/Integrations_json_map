@@ -1,0 +1,35 @@
+{
+  "integration_version": "1.0",
+  "integration_name": "hubspot",
+  "actions_to_perform": [
+    {
+      "action_to_perform": "create",
+      "arrivy_key_source": "TASK",
+      "external_key_source": "DEAL",
+      "action_meta": {
+        "keys_to_create": [
+          {
+            "external_key_name": "dealname",
+            "arrivy_key_name": "title"
+          },
+          {
+            "external_key_name": "status",
+            "arrivy_key_name": "status"
+          },
+          {
+            "external_key_name": "amount",
+            "arrivy_key_name": "template_extra_fields$total_amount"
+          },
+          {
+            "external_key_name": "dealstage",
+            "value": "appointmentscheduled"
+          },
+          {
+            "external_key_name": "description",
+            "arrivy_key_name": "details"
+          }
+        ]
+      }
+    }
+  ]
+}

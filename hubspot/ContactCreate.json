@@ -1,0 +1,55 @@
+{
+  "integration_version": "1.0",
+  "integration_name": "hubspot",
+  "actions_to_perform": [
+    {
+      "action_to_perform": "create",
+      "arrivy_key_source": "TASK",
+      "external_key_source": "CONTACT",
+      "action_meta": {
+        "keys_to_create": [
+          {
+            "external_key_name": "firstname",
+            "arrivy_key_name": "customer_first_name"
+          },
+          {
+            "external_key_name": "lastname",
+            "arrivy_key_name": "customer_last_name"
+          },
+          {
+            "external_key_name": "email",
+            "arrivy_key_name": "customer_email"
+          },
+          {
+            "external_key_name": "phone",
+            "arrivy_key_name": "customer_phone"
+          },
+          {
+            "external_key_name": "mobilephone",
+            "arrivy_key_name": "customer_mobile_number"
+          },
+          {
+            "external_key_name": "address",
+            "arrivy_key_name": "customer_address_line_1"
+          },
+          {
+            "external_key_name": "city",
+            "arrivy_key_name": "customer_city"
+          },
+          {
+            "external_key_name": "state",
+            "arrivy_key_name": "customer_state"
+          },
+          {
+            "external_key_name": "zip",
+            "arrivy_key_name": "customer_zipcode"
+          },
+          {
+            "external_key_name": "country",
+            "arrivy_key_name": "customer_country"
+          }
+        ]
+      }
+    }
+  ]
+}
