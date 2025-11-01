@@ -35,7 +35,7 @@
           {
             "arrivy_key_source": "TASK_FORM",
             "external_key_name": "property_5",
-            "reference_name": "address"
+            "reference_name": "address",
             "arrivy_field_type": "address"
           },
           {
