@@ -1,0 +1,93 @@
+{
+  "integration_version": "1.0",
+  "integration_name": "hubspot",
+  "actions_to_perform": [
+    {
+      "action_to_perform": "update",
+      "arrivy_key_source": "TASK",
+      "external_key_source": "DEAL",
+      "action_meta": {
+        "keys_to_update": [
+          {
+            "external_key_name": "dealstage",
+            "value": "closedwon"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "dealname",
+            "reference_name": "title"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "amount",
+            "reference_name": "amount"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "property_3",
+            "reference_name": "first_name"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "property_4",
+            "reference_name": "last_name"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "property_5",
+            "reference_name": "address"
+            "arrivy_field_type": "address"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "property_1",
+            "reference_name": "number_1"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "property_2",
+            "reference_name": "number_2"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "property_6",
+            "reference_name": "time",
+            "arrivy_field_type": "time"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "property_7",
+            "reference_name": "date",
+            "arrivy_field_type": "date"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "property_8",
+            "reference_name": "check_box",
+            "arrivy_field_type": "checkbox"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "property_9",
+            "reference_name": "radio",
+            "arrivy_field_type": "radio"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "property_10",
+            "reference_name": "drop_down",
+            "arrivy_field_type": "dropdown"
+          },
+          {
+            "external_key_name": "status",
+            "arrivy_key_name": "status"
+          },
+          {
+            "external_key_name": "description",
+            "arrivy_key_name": "details"
+          }
+        ]
+      }
+    }
+  ]
+}
