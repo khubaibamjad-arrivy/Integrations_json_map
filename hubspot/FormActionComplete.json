@@ -1,0 +1,127 @@
+{
+  "integration_version": "1.0",
+  "integration_name": "hubspot",
+  "actions_to_perform": [
+    {
+      "action_to_perform": "update",
+      "arrivy_key_source": "TASK",
+      "external_key_source": "DEAL",
+      "action_meta": {
+        "keys_to_update": [
+          {
+            "external_key_name": "dealstage",
+            "value": "closedwon"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "dealname",
+            "reference_name": "title"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "first_name",
+            "reference_name": "dvcustomername"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "multiline",
+            "reference_name": "multiline"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "companyname",
+            "reference_name": "companyname"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "amount",
+            "reference_name": "amount"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "contactnumber",
+            "reference_name": "contact_number"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "plainnumber",
+            "reference_name": "plainnumber"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "phonnumber",
+            "reference_name": "phonnumber"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "percentage",
+            "reference_name": "percentage"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "numbercurrency",
+            "reference_name": "numbercurrency"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "timetext24",
+            "reference_name": "timetext24",
+            "arrivy_field_type": "time"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "timetext12",
+            "reference_name": "timetext12",
+            "arrivy_field_type": "time"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "duration",
+            "reference_name": "duration",
+            "arrivy_field_type": "time"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "dropdowntext",
+            "reference_name": "dropdowntext",
+            "arrivy_field_type": "dropdown"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "dropdownnumber",
+            "reference_name": "dropdownnumber",
+            "arrivy_field_type": "dropdown"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "checkboxsingle",
+            "reference_name": "checkboxsingle",
+            "arrivy_field_type": "checkbox"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "buttoncheck",
+            "reference_name": "buttoncheck",
+            "arrivy_field_type": "checkbox"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "checkboxmulti",
+            "reference_name": "checkboxmulti",
+            "arrivy_field_type": "checkbox"
+          },
+          {
+            "arrivy_key_source": "TASK_FORM",
+            "external_key_name": "buttoncheckradio",
+            "reference_name": "buttoncheckradio",
+            "arrivy_field_type": "radio"
+          },
+          {
+            "external_key_name": "description",
+            "arrivy_key_name": "details"
+          }
+        ]
+      }
+    }
+  ]
+}
